@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 /**
  *
- * @author Woshington Rodrigues
+ * @author 
  */
 @Entity
 @Table(name="Access_group")
