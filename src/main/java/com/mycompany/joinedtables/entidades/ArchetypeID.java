@@ -14,7 +14,7 @@ import javax.persistence.Table;
 
 /**
  *
- * @author Woshington
+ * @author 
  */
 @Entity
 @Table(name="Archetype_ID")
