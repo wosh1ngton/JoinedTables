@@ -5,6 +5,7 @@
  */
 package com.mycompany.joinedtables.entidades;
 
+import java.io.Serializable;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
@@ -23,7 +24,7 @@ import javax.persistence.Table;
 @Inheritance(strategy=InheritanceType.JOINED)
 @DiscriminatorColumn(name="UID_TYPE",
         discriminatorType=DiscriminatorType.STRING, length=1)
-public abstract class UID {
+public abstract class UID implements Serializable {
 
     public UID() {
     }

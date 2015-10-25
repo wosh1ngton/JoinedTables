@@ -5,6 +5,7 @@
  */
 package com.mycompany.joinedtables.entidades;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
@@ -24,7 +25,9 @@ import javax.persistence.Table;
 @Inheritance(strategy=InheritanceType.JOINED)
 @DiscriminatorColumn(name="ObjectRef_TYPE",
         discriminatorType=DiscriminatorType.STRING, length=1)
-public class ObjectRef {
+public class ObjectRef implements Serializable {
+
+    
     
     @Id
     @OneToOne
@@ -34,7 +37,7 @@ public class ObjectRef {
     @Column
     private String type;
     
-    ObjectRef(){};
+    protected ObjectRef(){};
 
     public ObjectID getId() {
         return id;
