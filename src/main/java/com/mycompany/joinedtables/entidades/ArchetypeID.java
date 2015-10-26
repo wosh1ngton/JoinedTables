@@ -17,7 +17,7 @@ import javax.persistence.Table;
 
 /**
  *
- * @author Woshington
+ * @author 
  */
 @Entity
 @DiscriminatorValue(value="AI")
