@@ -15,9 +15,8 @@ import javax.persistence.Table;
  * @author Woshington Rodrigues
  */
 @Entity
-@Table(name="Access_group")
 @DiscriminatorValue(value="A")
-@PrimaryKeyJoinColumn(name="Object_ref")
+@PrimaryKeyJoinColumn(name="ObjectREF_ID")
 public class AccessGroupRef extends ObjectRef {
 
     public AccessGroupRef() {

@@ -16,7 +16,6 @@ import javax.persistence.Table;
  * @author Woshington
  */
 @Entity
-@Table(name="Generic_ID")
 @DiscriminatorValue(value="GI")
 @PrimaryKeyJoinColumn(name="Object_ID")
 public class GenericID extends ObjectID {

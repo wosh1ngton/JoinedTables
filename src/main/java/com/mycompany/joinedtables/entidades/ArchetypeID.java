@@ -20,9 +20,8 @@ import javax.persistence.Table;
  * @author Woshington
  */
 @Entity
-@Table(name="Archetype_ID")
 @DiscriminatorValue(value="AI")
-@PrimaryKeyJoinColumn(name="Object_ID")
+@PrimaryKeyJoinColumn(name="ID")
 public class ArchetypeID extends ObjectID {
     
     @Column

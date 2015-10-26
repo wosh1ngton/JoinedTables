@@ -16,7 +16,6 @@ import javax.persistence.Table;
  * @author Woshington
  */
 @Entity
-@Table(name="Internet_ID")
 @DiscriminatorValue(value="I")
 @PrimaryKeyJoinColumn(name="UID_ID")
 public class InternetID extends UID {

@@ -19,7 +19,9 @@ import javax.persistence.Table;
  * @author Woshington
  */
 @Entity
-@Table(name="UID_Based_ID")
+@Inheritance(strategy=InheritanceType.JOINED)
+@DiscriminatorColumn(name="UID_BASED_ID_TYPE",
+        discriminatorType=DiscriminatorType.STRING, length=1)
 @DiscriminatorValue(value="UB")
 @PrimaryKeyJoinColumn(name="Object_ID")
 public abstract class UIDBasedID extends ObjectID {

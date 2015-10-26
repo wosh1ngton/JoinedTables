@@ -21,29 +21,28 @@ import javax.persistence.Table;
  * @author Woshington
  */
 @Entity
-@Table(name="Object_Ref")
 @Inheritance(strategy=InheritanceType.JOINED)
 @DiscriminatorColumn(name="ObjectRef_TYPE",
         discriminatorType=DiscriminatorType.STRING, length=1)
 public class ObjectRef implements Serializable {
 
-    
-    
     @Id
+    private Long id;
+        
     @OneToOne
-    private ObjectID id;
+    private ObjectID objectId;
     @Column
+    
     private String namespace;
-    @Column
     private String type;
     
     protected ObjectRef(){};
 
-    public ObjectID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(ObjectID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

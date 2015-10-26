@@ -7,16 +7,19 @@ package com.mycompany.joinedtables.entidades;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.PrimaryKeyJoinColumn;
 
 /**
  *
  * @author Woshington
  */
+
+
 @Entity
 @DiscriminatorValue(value="P")
+@PrimaryKeyJoinColumn(name="ObjectREF_ID")
 public class PartyRef extends ObjectRef {
 
-    public PartyRef() {
-    }
+  
     
 }

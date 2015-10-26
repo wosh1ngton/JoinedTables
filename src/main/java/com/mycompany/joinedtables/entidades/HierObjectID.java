@@ -17,8 +17,7 @@ import javax.persistence.Table;
  * @author Woshington
  */
 @Entity
-@Table(name="Hier_object")
-@DiscriminatorValue(value="HO")
+@DiscriminatorValue(value="H")
 @PrimaryKeyJoinColumn(name="Object_ref")
 public class HierObjectID extends UIDBasedID {
     

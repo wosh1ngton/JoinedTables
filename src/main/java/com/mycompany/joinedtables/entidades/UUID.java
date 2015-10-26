@@ -16,7 +16,6 @@ import javax.persistence.Table;
  * @author Woshington
  */
 @Entity
-@Table(name="UID")
 @DiscriminatorValue(value="U")
 @PrimaryKeyJoinColumn(name="UID_ID")
 public class UUID extends UID {

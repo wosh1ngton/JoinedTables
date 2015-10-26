@@ -9,6 +9,7 @@ import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 
 /**
  *
@@ -16,6 +17,7 @@ import javax.persistence.OneToOne;
  */
 @Entity
 @DiscriminatorValue(value="L")
+@PrimaryKeyJoinColumn(name="ObjectREF_ID")
 public class LocatableRef extends ObjectRef {
 
     public LocatableRef() {
@@ -23,6 +25,9 @@ public class LocatableRef extends ObjectRef {
     
     @OneToOne
     UIDBasedID based_id;
+    
+    
+   
     
      @Column   
      private String path;

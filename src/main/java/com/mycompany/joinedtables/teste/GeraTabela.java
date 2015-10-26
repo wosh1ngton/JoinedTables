@@ -6,6 +6,8 @@
 package com.mycompany.joinedtables.teste;
 
 import com.mycompany.joinedtables.entidades.InternetID;
+import com.mycompany.joinedtables.entidades.ObjectID;
+import com.mycompany.joinedtables.entidades.TerminologyID;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -17,17 +19,23 @@ import javax.persistence.Persistence;
 public class GeraTabela {
     public static void main(String[] args) {
         InternetID internet=new InternetID();
-        internet.setValue("www.concursosdeti.net");
+        internet.setValue("www.globo.com.br2");
         
-        EntityManagerFactory factory;
-        factory = Persistence.createEntityManagerFactory("joined-table");
-        EntityManager manager=factory.createEntityManager();
+        TerminologyID ti=new TerminologyID();
+        ti.setID(2L);
+        ti.setValue("wos");
         
-        manager.getTransaction().begin();
-        manager.persist(internet);
-        manager.getTransaction().commit();
-        System.out.println("Endereço: " + internet.getValue());
         
-        manager.close();
+        EntityManagerFactory factory=Persistence.createEntityManagerFactory("joined-table");
+        EntityManager em=factory.createEntityManager();
+        
+        em.getTransaction().begin();
+        em.persist(ti);
+        em.getTransaction().commit();
+        
+        System.out.println("Endereco: " + ti.getValue());
+        
+        em.close();
     }
+  
 }

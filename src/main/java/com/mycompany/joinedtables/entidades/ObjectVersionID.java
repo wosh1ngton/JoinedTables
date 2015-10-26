@@ -8,18 +8,22 @@ package com.mycompany.joinedtables.entidades;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 
 /**
  *
  * @author Woshington
  */
 @Entity
-@DiscriminatorValue(value="OV")
+@DiscriminatorValue(value="V")
+@PrimaryKeyJoinColumn(name="UIDBasedId_id")
 public class ObjectVersionID extends UIDBasedID{
     
     @OneToOne
     private UID objectID;
+    @OneToOne
     private VersionTreeID versionTreeID;
+    @OneToOne
     private HierObjectID creatingSystemID;
     
 }

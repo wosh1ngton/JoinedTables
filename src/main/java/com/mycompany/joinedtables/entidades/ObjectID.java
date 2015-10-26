@@ -19,12 +19,14 @@ import javax.persistence.Table;
  * @author Woshington
  */
 @Entity
-@Table(name="Object_id")
 @Inheritance(strategy=InheritanceType.JOINED)
 @DiscriminatorColumn(name="object_id_TYPE",
         discriminatorType=DiscriminatorType.STRING, length=2)
 public abstract class ObjectID implements Serializable {
     @Id
+    private Long ID;
+    
+    
     private String value;
 
     public String getValue() {
@@ -33,6 +35,14 @@ public abstract class ObjectID implements Serializable {
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    public Long getID() {
+        return ID;
+    }
+
+    public void setID(Long ID) {
+        this.ID = ID;
     }
     
 }

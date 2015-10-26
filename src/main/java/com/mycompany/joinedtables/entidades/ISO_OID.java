@@ -17,8 +17,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name="ISO_OID")
 @DiscriminatorValue(value="O")
-@PrimaryKeyJoinColumn(name="ISO_ID")
-public class ISO_OID extends UID {
+@PrimaryKeyJoinColumn(name="UID_ID")
+    
+
+    public class ISO_OID  extends UID{
 
      
 }

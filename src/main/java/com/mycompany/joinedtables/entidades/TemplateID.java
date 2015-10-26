@@ -15,7 +15,6 @@ import javax.persistence.Table;
  * @author Woshington
  */
 @Entity
-@Table(name="Template_ID")
 @DiscriminatorValue(value="TE")
 @PrimaryKeyJoinColumn(name="Object_ID")
 public class TemplateID extends ObjectID {

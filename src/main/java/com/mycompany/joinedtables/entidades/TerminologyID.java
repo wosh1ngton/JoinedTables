@@ -15,7 +15,6 @@ import javax.persistence.Table;
  * @author Woshington
  */
 @Entity
-@Table(name="Terminlogy_ID")
 @DiscriminatorValue(value="TI")
 @PrimaryKeyJoinColumn(name="Object_ID")
 public class TerminologyID extends ObjectID {

@@ -20,7 +20,6 @@ import javax.persistence.Table;
  * Single-Table Strategy
  */
 @Entity
-@Table(name="UID")
 @Inheritance(strategy=InheritanceType.JOINED)
 @DiscriminatorColumn(name="UID_TYPE",
         discriminatorType=DiscriminatorType.STRING, length=1)
