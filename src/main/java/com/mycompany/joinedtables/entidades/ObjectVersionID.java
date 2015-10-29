@@ -15,8 +15,8 @@ import javax.persistence.PrimaryKeyJoinColumn;
  * @author Woshington
  */
 @Entity
-@DiscriminatorValue(value="V")
-@PrimaryKeyJoinColumn(name="UIDBasedId_id")
+@DiscriminatorValue(value="VERSIONID")
+@PrimaryKeyJoinColumn(name="UID_BASED_ID_TYPE")
 public class ObjectVersionID extends UIDBasedID{
     
     @OneToOne

@@ -30,7 +30,7 @@ public class GeraTabela {
         EntityManager em=factory.createEntityManager();
         
         em.getTransaction().begin();
-        em.persist(ti);
+        em.persist(internet);
         em.getTransaction().commit();
         
         System.out.println("Endereco: " + ti.getValue());

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.joinedtables.entidades;
 
 import java.io.Serializable;
@@ -10,11 +5,12 @@ import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToOne;
-import javax.persistence.Table;
 
 /**
  *
@@ -22,11 +18,22 @@ import javax.persistence.Table;
  */
 @Entity
 @Inheritance(strategy=InheritanceType.JOINED)
-@DiscriminatorColumn(name="ObjectRef_TYPE",
-        discriminatorType=DiscriminatorType.STRING, length=1)
+@DiscriminatorColumn(name="OBJECTREF_TYPE",
+        discriminatorType=DiscriminatorType.STRING, length=20)
 public class ObjectRef implements Serializable {
-
+    
+    public ObjectRef() {
+    }
+    
+    //@FullConstructor
+    public ObjectRef(ObjectID objectId, String namespace, String type) {
+        this.objectId = objectId;
+        this.namespace = namespace;
+        this.type = type;
+    }
+    
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
         
     @OneToOne
@@ -36,8 +43,6 @@ public class ObjectRef implements Serializable {
     private String namespace;
     private String type;
     
-    protected ObjectRef(){};
-
     public Long getId() {
         return id;
     }
@@ -61,6 +66,13 @@ public class ObjectRef implements Serializable {
     public void setType(String type) {
         this.type = type;
     }
-       
+    
+    public ObjectID getObjectId() {
+        return objectId;
+    }
+
+    public void setObjectId(ObjectID objectId) {
+        this.objectId = objectId;
+    }
     
 }

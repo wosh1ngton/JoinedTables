@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.joinedtables.entidades;
 
 import javax.persistence.DiscriminatorValue;
@@ -12,15 +7,21 @@ import javax.persistence.Table;
 
 /**
  *
- * @author Woshington R
+ * @author Woshington 
  */
 @Entity
-@Table(name="ISO_OID")
-@DiscriminatorValue(value="O")
+@DiscriminatorValue(value="ISO")
 @PrimaryKeyJoinColumn(name="UID_ID")
     
 
-    public class ISO_OID  extends UID{
+public class ISO_OID  extends UID{
 
+    public ISO_OID() {
+    }
+    
+    //@FullConstructor
+    public ISO_OID(String value) {
+        super.setValue(value);        
+    }
      
 }

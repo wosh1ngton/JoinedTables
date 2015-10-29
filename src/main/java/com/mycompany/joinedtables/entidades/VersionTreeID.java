@@ -1,12 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.joinedtables.entidades;
 
-import javax.persistence.Column;
+import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
@@ -14,15 +11,25 @@ import javax.persistence.Id;
  * @author Woshington
  */
 @Entity
-public class VersionTreeID {
+public class VersionTreeID implements Serializable {
+    
+    
+    public VersionTreeID() {
+    }
+
+    public VersionTreeID(String value, String trunkVersion, String branchNumber, String branchVersion) {
+        this.value = value;
+        this.trunkVersion = trunkVersion;
+        this.branchNumber = branchNumber;
+        this.branchVersion = branchVersion;
+    }
     
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Long id;
     private String value;
-    @Column
     private String trunkVersion;
-    @Column
     private String branchNumber;
-    @Column
     private String branchVersion;
 
     public String getValue() {
