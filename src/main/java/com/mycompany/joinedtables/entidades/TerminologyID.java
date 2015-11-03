@@ -10,20 +10,16 @@ import javax.persistence.PrimaryKeyJoinColumn;
  */
 @Entity
 @DiscriminatorValue(value="TERMINOLOGY")
-@PrimaryKeyJoinColumn(name="OBJECT_ID")
+@PrimaryKeyJoinColumn(name="OBJECTID_ID")
 public class TerminologyID extends ObjectID {
-    
-    public TerminologyID(String name, String version, String value) {
-        super(value); //chama o construtor da classe ancestral.
-        this.name = name;
-        this.version = version;
-    }
+
+    public TerminologyID(String value) {
+        super(value);
+    }   
 
     public TerminologyID() {
        
     }
     
-    private String name;
-    private String version;
-    
+       
 }

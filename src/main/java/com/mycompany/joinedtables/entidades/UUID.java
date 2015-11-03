@@ -18,7 +18,7 @@ public class UUID extends UID {
     
     //@FullConstructor
     public UUID(String value) {
-        super.setValue(value);        
+        super(value);        
     }    
     
 }

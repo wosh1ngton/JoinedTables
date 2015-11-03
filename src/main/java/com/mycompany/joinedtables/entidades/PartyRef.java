@@ -20,10 +20,13 @@ public class PartyRef extends ObjectRef {
     }
     
    //@FullConstructor
-    public PartyRef(ObjectID objectId, String type) {
-        super.setObjectId(objectId);
-        super.setType(type);
-    }    
+
+    public PartyRef(ObjectID objectId, String namespace, String type) {
+        super(objectId, namespace, type);
+    }
+     public PartyRef(ObjectID objectId) {
+        super(objectId);
+    }
   
     
 }

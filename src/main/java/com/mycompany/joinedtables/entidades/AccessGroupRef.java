@@ -21,6 +21,6 @@ public class AccessGroupRef extends ObjectRef {
     public AccessGroupRef(ObjectID objectId) {
         super.setObjectId(objectId);
     }  
-    		
+    
     
 }

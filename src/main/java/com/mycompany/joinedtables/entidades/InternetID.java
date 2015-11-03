@@ -18,7 +18,7 @@ public class InternetID extends UID {
     
     //@FullConstructor
     public InternetID(String value) {
-        super.setValue(value);
+        super(value);
     }
     
 }

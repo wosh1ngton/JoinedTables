@@ -4,6 +4,7 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,11 +19,15 @@ import javax.persistence.OneToOne;
  */
 @Entity
 @Inheritance(strategy=InheritanceType.JOINED)
-@DiscriminatorColumn(name="OBJECTREF_TYPE",
-        discriminatorType=DiscriminatorType.STRING, length=20)
+@DiscriminatorColumn(name="OBJECTREF_TYPE", discriminatorType=DiscriminatorType.STRING, length=20)
+@DiscriminatorValue(value = "OBJECT_REF")
 public class ObjectRef implements Serializable {
     
     public ObjectRef() {
+    }
+
+    public ObjectRef(ObjectID objectId) {
+        this.objectId = objectId;
     }
     
     //@FullConstructor
@@ -38,8 +43,7 @@ public class ObjectRef implements Serializable {
         
     @OneToOne
     private ObjectID objectId;
-    @Column
-    
+        
     private String namespace;
     private String type;
     

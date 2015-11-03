@@ -15,85 +15,15 @@ import javax.persistence.PrimaryKeyJoinColumn;
  */
 @Entity
 @DiscriminatorValue(value="ARCHETYPE")
-@PrimaryKeyJoinColumn(name="ID")
+@PrimaryKeyJoinColumn(name="OBJECTID_ID")
 public class ArchetypeID extends ObjectID {
-    
-    private String qualifiedRmEntity;   // calculated
-    private String rmOriginator;
-    private String rmName;
-    private String rmEntity;
-    private String domainConcept;       // calculated
-    private String conceptName;
-    @ElementCollection
-    @CollectionTable(name="Specialisation",
-    joinColumns=@JoinColumn(name="archetype_id"))
-    @Column(name="specialisation")
-    private List<String> specialisation;
-    private String versionID;
 
-    public String getQualifiedRmEntity() {
-        return qualifiedRmEntity;
+    public ArchetypeID(String value) {
+        super(value);
     }
 
-    public void setQualifiedRmEntity(String qualifiedRmEntity) {
-        this.qualifiedRmEntity = qualifiedRmEntity;
+    public ArchetypeID() {
     }
-
-    public String getRmOriginator() {
-        return rmOriginator;
-    }
-
-    public void setRmOriginator(String rmOriginator) {
-        this.rmOriginator = rmOriginator;
-    }
-
-    public String getRmName() {
-        return rmName;
-    }
-
-    public void setRmName(String rmName) {
-        this.rmName = rmName;
-    }
-
-    public String getRmEntity() {
-        return rmEntity;
-    }
-
-    public void setRmEntity(String rmEntity) {
-        this.rmEntity = rmEntity;
-    }
-
-    public String getDomainConcept() {
-        return domainConcept;
-    }
-
-    public void setDomainConcept(String domainConcept) {
-        this.domainConcept = domainConcept;
-    }
-
-    public String getConceptName() {
-        return conceptName;
-    }
-
-    public void setConceptName(String conceptName) {
-        this.conceptName = conceptName;
-    }
-
-    public List<String> getSpecialisation() {
-        return specialisation;
-    }
-
-    public void setSpecialisation(List<String> specialisation) {
-        this.specialisation = specialisation;
-    }
-
-    public String getVersionID() {
-        return versionID;
-    }
-
-    public void setVersionID(String versionID) {
-        this.versionID = versionID;
-    }
-    
+       
     
 }

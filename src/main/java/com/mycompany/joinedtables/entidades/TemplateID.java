@@ -10,7 +10,7 @@ import javax.persistence.PrimaryKeyJoinColumn;
  */
 @Entity
 @DiscriminatorValue(value="TEMPLATE")
-@PrimaryKeyJoinColumn(name="OBJECT_ID")
+@PrimaryKeyJoinColumn(name="OBJECTID_ID")
 public class TemplateID extends ObjectID {
     
     public TemplateID() {
@@ -18,6 +18,6 @@ public class TemplateID extends ObjectID {
     
     //@FullConstructor
     public TemplateID(String value) {
-	super.setValue(value);
+	super(value);
     }
 }

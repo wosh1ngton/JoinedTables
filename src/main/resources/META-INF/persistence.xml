@@ -4,7 +4,6 @@
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
     <class>com.mycompany.joinedtables.entidades.ISO_OID</class>
     <class>com.mycompany.joinedtables.entidades.InternetID</class>
-    <class>com.mycompany.joinedtables.entidades.UID</class>
     <class>com.mycompany.joinedtables.entidades.UUID</class>
     <class>com.mycompany.joinedtables.entidades.AccessGroupRef</class>
     <class>com.mycompany.joinedtables.entidades.ArchetypeID</class>
@@ -17,8 +16,9 @@
     <class>com.mycompany.joinedtables.entidades.PartyRef</class>
     <class>com.mycompany.joinedtables.entidades.TemplateID</class>
     <class>com.mycompany.joinedtables.entidades.TerminologyID</class>
-    <class>com.mycompany.joinedtables.entidades.UIDBasedID</class>
     <class>com.mycompany.joinedtables.entidades.VersionTreeID</class>
+    <class>com.mycompany.joinedtables.entidades.UID</class>
+    <class>com.mycompany.joinedtables.entidades.UIDBasedID</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/identification_v3"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
@@ -26,6 +26,7 @@
       <property name="javax.persistence.jdbc.password" value="h4ll"/>
       <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
       <property name="hibernate.archive.autodetection" value="false"/>
+      <property name="javax.persistence.schema-generation.database.action" value="none"/>
     </properties>
   </persistence-unit>
 </persistence>

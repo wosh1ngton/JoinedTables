@@ -1,6 +1,5 @@
 package com.mycompany.joinedtables.entidades;
 
-import java.io.Serializable;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
@@ -9,6 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.MappedSuperclass;
+import org.hibernate.annotations.Polymorphism;
+import org.hibernate.annotations.PolymorphismType;
 
 /**
  *
@@ -16,9 +18,8 @@ import javax.persistence.InheritanceType;
  */
 @Entity
 @Inheritance(strategy=InheritanceType.JOINED)
-@DiscriminatorColumn(name="OBJECT_ID_TYPE",
-        discriminatorType=DiscriminatorType.STRING, length=20)
-public abstract class ObjectID implements Serializable {
+@DiscriminatorColumn(name="OBJECTID_TYPE", discriminatorType=DiscriminatorType.STRING, length=20)
+public abstract class ObjectID {
     
      public ObjectID(String value) {
         this.value = value;
@@ -29,9 +30,7 @@ public abstract class ObjectID implements Serializable {
     
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long ID;
-    
-    
+    private Long ID;    
     private String value;
 
     public String getValue() {

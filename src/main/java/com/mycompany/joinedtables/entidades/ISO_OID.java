@@ -3,7 +3,6 @@ package com.mycompany.joinedtables.entidades;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.PrimaryKeyJoinColumn;
-import javax.persistence.Table;
 
 /**
  *
@@ -12,8 +11,6 @@ import javax.persistence.Table;
 @Entity
 @DiscriminatorValue(value="ISO")
 @PrimaryKeyJoinColumn(name="UID_ID")
-    
-
 public class ISO_OID  extends UID{
 
     public ISO_OID() {
@@ -21,7 +18,7 @@ public class ISO_OID  extends UID{
     
     //@FullConstructor
     public ISO_OID(String value) {
-        super.setValue(value);        
+        super(value);        
     }
      
 }

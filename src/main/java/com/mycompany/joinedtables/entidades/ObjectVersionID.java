@@ -9,6 +9,7 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.SecondaryTable;
 
 /**
  *
@@ -16,14 +17,17 @@ import javax.persistence.PrimaryKeyJoinColumn;
  */
 @Entity
 @DiscriminatorValue(value="VERSIONID")
-@PrimaryKeyJoinColumn(name="UID_BASED_ID_TYPE")
+@PrimaryKeyJoinColumn(name="UIDBASEDID_ID")
 public class ObjectVersionID extends UIDBasedID{
+   
     
-    @OneToOne
-    private UID objectID;
-    @OneToOne
-    private VersionTreeID versionTreeID;
-    @OneToOne
-    private HierObjectID creatingSystemID;
+    public ObjectVersionID(String value) {
+        super(value);
+    }
+
+    public ObjectVersionID() {
+    }
+    
+   
     
 }

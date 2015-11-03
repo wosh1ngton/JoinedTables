@@ -17,8 +17,7 @@ import javax.persistence.InheritanceType;
  */
 @Entity
 @Inheritance(strategy=InheritanceType.JOINED)
-@DiscriminatorColumn(name="UID_TYPE",
-        discriminatorType=DiscriminatorType.STRING, length=20)
+@DiscriminatorColumn(name="UID_TYPE", discriminatorType=DiscriminatorType.STRING, length=20)
 public abstract class UID implements Serializable {
 
     public UID() {
