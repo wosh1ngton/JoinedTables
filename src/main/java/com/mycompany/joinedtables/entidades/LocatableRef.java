@@ -2,6 +2,7 @@ package com.mycompany.joinedtables.entidades;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 
@@ -29,7 +30,7 @@ public class LocatableRef extends ObjectRef {
         this.based_id=id;
     }
     
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER)
     UIDBasedID based_id;       
     private String path;
 
